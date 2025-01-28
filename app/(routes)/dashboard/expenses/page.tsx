@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function page() {
+const expenses = () => {
   return (
     <div>
-      Hello World!
+      Expenses
     </div>
   )
 }
+
+export default expenses

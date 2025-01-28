@@ -1,8 +1,12 @@
+'use client'
 import { Button } from '@/components/ui/button'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from '@clerk/nextjs'
+import Link from 'next/link';
 import React from 'react'
 
 export default function Header() {
+  const {user, isSignedIn} = useUser();
+
   return (
     <div className='p-5 flex justify-between border shadow-md'>
         <img 
@@ -11,17 +15,30 @@ export default function Header() {
             width={100}
             height={50}
         />
-        <SignedOut>
-          {/* <Button
+
+        { isSignedIn ? 
+          
+          <UserButton/> : 
+          <Link href="/dashboard">
+              <Button
+                variant="outline" 
+              >
+                  Get Started
+            </Button>
+          </Link>
+          
+
+        }
+        {/* <SignedOut>
+          <Button
               variant="outline" 
           >
               <SignInButton/>
-          </Button> */}
-           <SignInButton/>
+         </Button>
         </SignedOut>
         <SignedIn>
           <UserButton/>
-        </SignedIn>
+        </SignedIn> */}
        
     </div>
   )

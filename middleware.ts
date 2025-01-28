@@ -2,8 +2,8 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 // Any route within this createRouteMatcher is automatically free from the clerkMiddleware authentication(simply Unprotected)
 const isPublicRoute = createRouteMatcher([
-  // '/sign-in(.*)',
-  // '/sign-up(.*)'
+  '/sign-in(.*)',
+  '/sign-up(.*)',
   '/'
 
 ])
