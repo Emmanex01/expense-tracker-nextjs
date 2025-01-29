@@ -49,7 +49,7 @@ const SideBar = () => {
         <div>
             {menus.map((menu, index) => (
             <Link href={menu.path}>
-                <h1 className={`flex gap-2 items-center rounded-md text-gray-500 font-medium p-4 hover:text-primary hover:bg-blue-100 ${menu.path == params && "bg-blue-100"}`}>
+                <h1 key={menu.id} className={`flex gap-2 items-center rounded-md text-gray-500 font-medium p-4 hover:text-primary hover:bg-blue-100 ${menu.path == params && "bg-blue-100"}`}>
                         <menu.Icon/>
                         {menu.name}
                 </h1>
