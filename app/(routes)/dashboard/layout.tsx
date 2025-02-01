@@ -17,12 +17,17 @@ export default function layout({children}: {children: ReactNode}) {
     user&&checkUserBudget()
   },[user])
 
+  // A function to check whether has a budget
   const checkUserBudget = async () => {
+
+
     const result = await db.select()
     .from(Budgets)
     .where(eq(Budgets.CreatedBy, user?.primaryEmailAddress?.emailAddress?? ""))
 
     console.log(result)
+
+    // Changes the route back to dashboard page
     if(result?.length==0) {
       router.replace("/dashboard")
     }
