@@ -61,9 +61,6 @@ const CreateBudget = () => {
                 value={amount} 
                 className='w-full' 
                 placeholder='$0000'
-                onChange={(e) => {
-                  setAmount(e)
-                }}
               />
             </div>
             <Button 
