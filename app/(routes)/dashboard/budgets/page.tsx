@@ -1,9 +1,10 @@
 import React from 'react'
+import BudgetList from './_components/BudgetList'
 
 const Budget = () => {
   return (
     <div>
-      Budget
+      <BudgetList/>
     </div>
   )
 }

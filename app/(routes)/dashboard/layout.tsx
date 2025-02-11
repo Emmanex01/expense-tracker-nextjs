@@ -28,9 +28,9 @@ export default function layout({children}: {children: ReactNode}) {
     console.log(result)
 
     // Changes the route back to dashboard page
-    if(result?.length==0) {
-      router.replace("/dashboard")
-    }
+    // if(result?.length==0) {
+    //   router.replace("/dashboard")
+    // }
   }
   return (
     <div>
